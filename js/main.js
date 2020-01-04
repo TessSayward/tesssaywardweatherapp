@@ -1,13 +1,36 @@
+// sample array
+var arr = ['By switching to energy efficient bulbs we could reduce pollution by the same amount as removing one million cars from the road.','Always make sure to recycle your glass. It can reduce related water pollution by up to fifty percent and related air pollution by up to twenty percent.','Think about carrying around a reusble water bottle. Around 90% of water bottles end up decomposing in landfills rather than being recycled.','When brushing your teeth, turning the tap off while brushing can save five gallons of water per day.'];
+
+function getRandom(){
+  // get random number based on length of array
+  var rand = Math.floor(Math.random() * arr.length);
+  // display random value
+  $('.display').html( arr[rand] );
+}
+
+// call function to display a random term when the page loads
+getRandom();
+
+/* change the random term each time the .randomize link is clicked */
+// $('.randomize').click(function(){
+//   getRandom();
+// })
+
+
+
+
+
+
 /* -----------------------------------------------
    Function for retrieving the main weather info
    ----------------------------------------------- */
 
 // Replace the lat/long below with the lat/long for your desired location.
 // Get your city lat/long using https://www.latlong.net/
-var latlong = '41.740681,-71.308609';
+var latlong = '55.676098,12.568337';
 
 // Your unique API key. Place the long string of characters between the quotes.
-var apikey = '';
+var apikey = '714745d3e6583a455bacab42b7813329';
 
 // Access the DarkSky API for weather data. DO NOT EDIT THIS LINE.
 $.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+apikey+'/' + latlong)
@@ -51,6 +74,7 @@ $.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/
 });
 
 
+
 /* -----------------------------------------------
    Function for displaying the main weather info
    ----------------------------------------------- */
@@ -74,7 +98,16 @@ function displayData(forecast){
 	// I can add data from the "Daily" array like this
 
 	// $('.today').html(forecast.daily.data[0].temperatureHigh);
-	
+	// $('.today').html(forecast.daily.data[0].temperatureHigh);
+
+	$('.today').html(Math.round(forecast.currently.temperature));
+	$('.feelslike').html(Math.round(forecast.currently.apparentTemperature));
+	$('.highdegree').html(Math.round(forecast.daily.data[0].temperatureHigh));
+	$('.lowdegree').html(Math.round(forecast.daily.data[0].temperatureLow));
+	$('.onehourlater').html(Math.round(forecast.hourly.data[1].temperature));
+	$('.twohourlater').html(Math.round(forecast.hourly.data[2].temperature));
+	$('.threehourlater').html(Math.round(forecast.hourly.data[3].temperature));
+
 	// In this example, the high temperature for the first day of the week
 	// (referenced by the number 0) is written as HTML inside the <div class="today"> element
 	// If I want to round this number up, I would modify the code like this
@@ -94,7 +127,12 @@ function displayData(forecast){
 	// I can access the "icon" property. This returns a value that can be used
 	// as a CSS class name that you can create with your style details
 
-	// $('.today').addClass(forecast.daily.data[0].icon);
+	 $('.weathericon').addClass(forecast.daily.data[0].icon);
+	 $('.onehourlater').addClass(forecast.hourly.data[1].icon);
+	 $('.twohourlater').addClass(forecast.hourly.data[2].icon);
+	 $('.threehourlater').addClass(forecast.hourly.data[3].icon);
+
+
 
 	// Note – the value of "icon" above needs to be checked in the inspect
 	// panel. It may say "rain". If this is the case, you could create a rule
