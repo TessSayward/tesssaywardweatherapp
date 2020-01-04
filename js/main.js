@@ -1,5 +1,5 @@
 // sample array
-var arr = ['By switching to energy efficient bulbs we could reduce pollution by the same amount as removing one million cars from the road.','Always make sure to recycle your glass. It can reduce related water pollution by up to fifty percent and related air pollution by up to twenty percent.','Think about carrying around a reusble water bottle. Around 90% of water bottles end up decomposing in landfills rather than being recycled.','When brushing your teeth, turning the tap off while brushing can save five gallons of water per day.'];
+var arr = ['By switching to energy efficient bulbs we could reduce pollution by the same amount as removing one million cars from the road.','Always make sure to recycle your glass. It can reduce related water pollution by up to fifty percent and related air pollution by up to twenty percent.','Around 90% of water bottles end up decomposing in landfills rather than being recycled.','When brushing your teeth, turning the tap off while brushing can save five gallons of water per day.'];
 
 function getRandom(){
   // get random number based on length of array
