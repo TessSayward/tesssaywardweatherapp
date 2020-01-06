@@ -1,5 +1,5 @@
 body{
-	background-color: #98FB98;
+	background-color: #eaf1f3;
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
 	width: 100vw;
@@ -7,8 +7,8 @@ body{
 }
 .location{
 	display: grid;
-	grid-template-rows: repeat(3, 1fr);
-	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-columns: 1fr 4fr 1fr;
 		h1{
 			grid-column: 2 / span 3;
 			justify-self: end;
@@ -23,6 +23,11 @@ body{
 			grid-column: 2;
 			grid-row: 2;
 			justify-self: start;
+			width: 100%;
+		}
+
+		.weathericon img{
+			width: 60%;
 		}
 		.today{
 			grid-column: 2;
@@ -38,7 +43,6 @@ body{
 			align-self: start;
 			font-size: 20px;
 			padding-left: 5px;
-			padding-bottom: 10px;
 		}
 		.lowdegree{
 			grid-column: 3;
@@ -46,7 +50,6 @@ body{
 			align-self: end;
 			font-size: 20px;
 			padding-left: 5px;
-			padding-top: 25px;
 
 		}
 		h2{
@@ -71,24 +74,41 @@ body{
 
 	  }
 
-	  .display{
+ .display{
 	  	grid-column: 2;
 	  	grid-row: 1;
-	  	padding: 1rem 1rem 3rem 1rem;
-	  font-size: 7vw;
+	  	padding: 1rem 1rem 1rem 1rem;
+	  font-size: 6vw;
 	  }
 
-	  .hourly{
+.hourly{
 	  	display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: 1fr;
-		place-items: center;
+		align-items: center;
+		justify-items: center;
 
-		.sevendaybutton{
+		div {
+			display: grid;
+			grid-template-columns: 1fr;
+			justify-items: center;
+			width: 100%;
+
+			
+		}
+
+	}
+	
+.sevendaybutton{
 			grid-column: 2;
 			padding-top: 1rem;
 			text-decoration: none;
 			color: white;
-			font-weight: 700;		}
-
+			font-weight: 700;		
 		}
+
+	.hourly img{
+			width: 110%;
+			margin: 0;
+		}
+

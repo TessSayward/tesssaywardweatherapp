@@ -104,9 +104,23 @@ function displayData(forecast){
 	$('.feelslike').html(Math.round(forecast.currently.apparentTemperature));
 	$('.highdegree').html(Math.round(forecast.daily.data[0].temperatureHigh));
 	$('.lowdegree').html(Math.round(forecast.daily.data[0].temperatureLow));
-	$('.onehourlater').html(Math.round(forecast.hourly.data[1].temperature));
-	$('.twohourlater').html(Math.round(forecast.hourly.data[2].temperature));
-	$('.threehourlater').html(Math.round(forecast.hourly.data[3].temperature));
+
+
+
+	$('.onehourlaterdegree').html(Math.round(forecast.hourly.data[1].temperature));
+	$('.twohourlaterdegree').html(Math.round(forecast.hourly.data[2].temperature));
+	$('.threehourlaterdegree').html(Math.round(forecast.hourly.data[3].temperature));
+
+	
+
+	 $('.weathericon').html('<img src="' + displayIcon(forecast.daily.data[0].icon) + '">');
+	 $('.onehourlatericon').html('<img src="' + displayIcon(forecast.hourly.data[1].icon) + '">');
+	 $('.twohourlatericon').html('<img src="' + displayIcon(forecast.hourly.data[2].icon) + '">');
+	 $('.threehourlatericon').html('<img src="' + displayIcon(forecast.hourly.data[3].icon) + '">');
+
+	 $('.onehourlatertime').html(hourConverter(forecast.hourly.data[1].time));
+	 $('.twohourlatertime').html(hourConverter(forecast.hourly.data[2].time));
+	 $('.threehourlatertime').html(hourConverter(forecast.hourly.data[3].time));
 
 	// In this example, the high temperature for the first day of the week
 	// (referenced by the number 0) is written as HTML inside the <div class="today"> element
@@ -127,13 +141,9 @@ function displayData(forecast){
 	// I can access the "icon" property. This returns a value that can be used
 	// as a CSS class name that you can create with your style details
 
-	 $('.weathericon').addClass(forecast.daily.data[0].icon);
-	 $('.onehourlater').addClass(forecast.hourly.data[1].icon);
-	 $('.twohourlater').addClass(forecast.hourly.data[2].icon);
-	 $('.threehourlater').addClass(forecast.hourly.data[3].icon);
+	 
 
-
-
+	
 	// Note – the value of "icon" above needs to be checked in the inspect
 	// panel. It may say "rain". If this is the case, you could create a rule
 	// inside your CSS called .rain and then add, maybe, a background color
@@ -209,10 +219,21 @@ function timeConverter(UNIX_timestamp){
   return time;
 }
 
+function hourConverter(h){
+  // set up new date object
+  var a = new Date(h * 1000);
+  // convert date/time to simplified format
+  var hour = a.toLocaleTimeString([], {hour: '2-digit'});
+  // use the following line for time with AM/PM
+  return hour;
+}
 
 /* -----------------------------------------------
    Function for adding icon files
    ----------------------------------------------- */
+
+
+
 
 function displayIcon(n){
 	switch(n) {
