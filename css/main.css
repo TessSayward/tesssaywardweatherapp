@@ -13,7 +13,8 @@ header {
   justify-items: center;
   /* visual design */
   text-align: center;
-  background-color: lightgray; }
+  background-color: lightgray;
+  transition: all .7s; }
   header h1 {
     color: #fff; }
   header p {
@@ -21,6 +22,9 @@ header {
 
 main {
   padding: 3rem; }
+
+.slide {
+  transform: translateY(-100%); }
 
 .slideUp {
   animation-name: slideUp;

@@ -18,13 +18,14 @@ getRandom();
 
 
 
-$('header').click(function(){
-  $(this).removeClass('slideDown').addClass('slideUp');
-})
+// $('header').click(function(){
+//   $(this).removeClass('slideDown').addClass('slideUp');
+// })
 
-$('main').click(function(){
-  $('header').removeClass('slideUp').addClass('slideDown');
-})
+// $('main').click(function(){
+//   $('header').removeClass('slideUp').addClass('slideDown');
+// })
+
 
 
 /* -----------------------------------------------
@@ -65,7 +66,7 @@ $.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/
 
 	 $('header').append('<a class="button" href="#">Get going!</a>');
 	 $('header .button').click(function(){
-	 $('header').hide();
+	 	$('header').addClass("slide");
 	});
 
 	// The following line calls a function to display
