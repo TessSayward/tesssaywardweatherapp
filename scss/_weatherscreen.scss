@@ -87,6 +87,7 @@ body{
 	display: grid;
 	grid-template-columns: .5fr 5fr .5fr;
 	grid-template-rows: 1;
+	font-family: 'Kameron', serif;
 
 	  }
 
@@ -124,11 +125,13 @@ body{
 			padding-top: 1rem;
 			text-decoration: none;
 			color: white;
-			font-weight: 700;		
+			font-weight: 700;
+			color: #b3b6b7;
+			margin-bottom: 1rem;		
 		}
 
 	.hourly img{
-			width: 110%;
+			width: 95%;
 			margin: 0;
 		}
 

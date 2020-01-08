@@ -116,7 +116,8 @@ body {
 .tips {
   display: grid;
   grid-template-columns: .5fr 5fr .5fr;
-  grid-template-rows: 1; }
+  grid-template-rows: 1;
+  font-family: 'Kameron', serif; }
 
 .display {
   grid-column: 2;
@@ -145,10 +146,12 @@ body {
   padding-top: 1rem;
   text-decoration: none;
   color: white;
-  font-weight: 700; }
+  font-weight: 700;
+  color: #b3b6b7;
+  margin-bottom: 1rem; }
 
 .hourly img {
-  width: 110%;
+  width: 95%;
   margin: 0; }
 
 /*# sourceMappingURL=main.css.map */
