@@ -18,7 +18,13 @@ getRandom();
 
 
 
+$('header').click(function(){
+  $(this).removeClass('slideDown').addClass('slideUp');
+})
 
+$('main').click(function(){
+  $('header').removeClass('slideUp').addClass('slideDown');
+})
 
 
 /* -----------------------------------------------
@@ -57,10 +63,10 @@ $.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/
 	// Another way to remove the header is to provide a button and the event
 	// to trigger what happens when the button is clicked (uncomment to use)
 
-	// $('header').append('<a class="button" href="#">Click</a>');
-	// $('header .button').click(function(){
-	//   $('header').hide();
-	// });
+	 $('header').append('<a class="button" href="#">Get going!</a>');
+	 $('header .button').click(function(){
+	 $('header').hide();
+	});
 
 	// The following line calls a function to display
 	// the main weather information. DO NOT EDIT THIS LINE.

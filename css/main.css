@@ -1,34 +1,66 @@
 header {
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  grid-column: 1fr;
+  /* positioning the header above the content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  width: 100vw;
-  place-items: center; }
-  header .launch {
-    grid-row: 2;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif; }
+  /* grid layout */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 1fr;
+  align-items: center;
+  justify-items: center;
+  /* visual design */
+  text-align: center;
+  background-color: lightgray; }
+  header h1 {
+    color: #fff; }
+  header p {
+    color: #B2DFDB; }
 
+main {
+  padding: 3rem; }
+
+.slideUp {
+  animation-name: slideUp;
+  animation-duration: .4s;
+  animation-fill-mode: forwards; }
+
+.slideDown {
+  animation-name: slideDown;
+  animation-duration: .4s;
+  animation-fill-mode: forwards; }
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0%); }
+  100% {
+    transform: translateY(-100%); } }
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0%); } }
 body {
   background-color: #eaf1f3;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Dosis', sans-serif;
   height: 100vh;
   width: 100vw; }
 
 .location {
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
   grid-template-columns: 1fr 4fr 1fr; }
   .location h1 {
     grid-column: 2 / span 3;
     justify-self: end;
     grid-row: 1;
-    font-size: 2rem;
+    font-size: 3rem;
     margin: 0;
     padding: 1.5rem 2rem 1rem 2rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 700; }
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300; }
   .location .weathericon {
     grid-column: 2;
     grid-row: 2;
@@ -42,28 +74,40 @@ body {
     align-self: center;
     grid-row: 2;
     font-size: 4rem;
-    margin: 0; }
+    margin: 0;
+    color: #5f6a6a; }
   .location .highdegree {
     grid-column: 3;
     grid-row: 2;
-    align-self: start;
     font-size: 20px;
-    padding-left: 5px; }
+    padding-left: 3px;
+    align-self: center;
+    padding-bottom: 5px;
+    color: #b3b6b7; }
   .location .lowdegree {
     grid-column: 3;
     grid-row: 2;
-    align-self: end;
     font-size: 20px;
-    padding-left: 5px; }
+    padding-left: 3px;
+    align-self: center;
+    padding-top: 1.8rem;
+    color: #7b7d7d; }
+  .location .unit {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: center;
+    padding-bottom: 3.5rem;
+    font-size: 1.6rem;
+    color: #5f6a6a; }
   .location h2 {
     grid-column: 2;
-    grid-row: 3;
-    grid-column: 2;
-    grid-row: 3;
+    grid-row: 2;
     margin: 0;
-    align-self: start;
-    font-size: 1rem;
-    padding: 5px; }
+    align-self: end;
+    padding: 5px;
+    justify-self: end;
+    font-size: 12px;
+    padding-bottom: 2rem; }
 
 .tips {
   display: grid;
@@ -87,6 +131,10 @@ body {
     grid-template-columns: 1fr;
     justify-items: center;
     width: 100%; }
+    .hourly div img {
+      width: 110%;
+      margin: -7px;
+      margin-bottom: -30px; }
 
 .sevendaybutton {
   grid-column: 2;
