@@ -12,12 +12,12 @@ header {
   /* grid layout */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 3fr 1fr 1fr;
   align-items: center;
   justify-items: center;
   /* visual design */
   text-align: center;
-  background-color: lightgray;
+  background-color: #C5F3FF;
   transition: all .7s;
   h1 {
     color: #fff;
@@ -55,4 +55,12 @@ main {
 @keyframes slideDown {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(0%); }
+}
+
+header .button{
+	align-self: start;
+	text-decoration: none;
+	color: white;
+	font-weight: 700;
+	font-size: 1.2rem;
 }

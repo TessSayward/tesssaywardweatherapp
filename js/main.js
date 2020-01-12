@@ -69,6 +69,9 @@ $.getJSON('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/
 	 	$('header').addClass("slide");
 	});
 
+	
+
+
 	// The following line calls a function to display
 	// the main weather information. DO NOT EDIT THIS LINE.
 	displayData(forecast);
@@ -245,43 +248,43 @@ function hourConverter(h){
 function displayIcon(n){
 	switch(n) {
 		case "clear-day":
-    		return "img/icons/Sun.svg";
+    		return "img/Sun.svg";
     		break;
     	case "clear-night":
-    		return "img/icons/Moon-Full.svg";
+    		return "img/clearnight.svg";
     		break;
     	case "rain":
-    		return "img/icons/Cloud-Rain.svg";
+    		return "img/rain.svg";
     		break;
     	case "snow":
-    		return "img/icons/Snowflake.svg";
+    		return "img/snow.svg";
     		break;
     	case "sleet":
-    		return "img/icons/Cloud-Hail.svg";
+    		return "img/sleet.svg";
     		break;
     	case "wind":
-    		return "img/icons/Wind.svg";
+    		return "img/windy.svg";
     		break;
     	case "fog":
-    		return "img/icons/Cloud-Fog.svg";
+    		return "img/fog.svg";
     		break;
     	case "cloudy":
-    		return "img/icons/Cloud.svg";
+    		return "img/cloudy.svg";
     		break;
     	case "partly-cloudy-day":
-    		return "img/icons/Cloud-Sun.svg";
+    		return "img/partlycloudyday.svg";
     		break;
     	case "partly-cloudy-night":
-    		return "img/icons/Cloud-Moon.svg";
+    		return "img/partlycloudynight.svg";
     		break;
     	case "hail":
-    		return "img/icons/Cloud-Hail.svg";
+    		return "img/hail.svg";
     		break;
     	case "thunderstorm":
-    		return "img/icons/Cloud-Lightening.svg";
+    		return "img/lightning.svg";
     		break;
     	case "tornado":
-    		return "img/icons/Tornado.svg";
+    		return "img/tornado.svg";
     		break;
   		default:
     		// code block
