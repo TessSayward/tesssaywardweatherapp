@@ -1,0 +1,74 @@
+
+
+.weatherpanel{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 2rem 2rem 3rem;
+	align-items: center;
+	justify-items: center;
+	height: 30vh;
+		color: white;
+	h3{
+	grid-row: 1;
+	}
+ 	img{
+    	grid-row: 2;
+    	margin: -1rem;
+    	color: white;
+    }
+    p{
+    	 font-family: 'Dosis', sans-serif;
+    	 font-weight: 700;
+    	 font-size: 1.5rem;
+    	 margin: 0;
+    }
+
+ 
+}
+
+.sevenday {
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	background-image: url(../img/underground.png);
+	background-size: cover;
+	height: 100vh;
+
+	.sevendaybutton{
+		grid-column: 2;
+		grid-row: 1;
+		justify-self: center;
+		font-size: 1.3rem
+	}
+	   .day1p{
+	grid-row: 2;
+	grid-column: 1;
+	}
+	.day2p{
+		grid-column: 2;
+		grid-row: 2;
+		align-content: center;
+	}
+	.day3p{
+		grid-column: 3;
+		grid-row: 2;
+		align-content: end;
+	}
+	.day4p{
+		grid-column: 1;
+		grid-row: 3;
+	}
+	.day5p{
+		grid-column: 2;
+		grid-row: 3;
+		align-content: center;
+	}
+	.day6p{
+		grid-column: 3;
+			grid-row: 3;
+			align-content: end;
+	}
+	
+}
+

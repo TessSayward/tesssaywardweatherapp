@@ -8,6 +8,23 @@ function getRandom(){
   $('.display').html( arr[rand] );
 }
 
+$('.sevenday a').click(function(event){
+  
+  // prevent defalt click behavior
+  // don't jump to content
+  event.preventDefault();
+    
+  // identify position of target
+  var target = $(this).attr('href');
+  var top = $(target).offset().top;
+
+  // animate scroll to target
+  $('html,body').animate({
+    scrollTop: top
+    },700);
+
+});
+
 // call function to display a random term when the page loads
 getRandom();
 
@@ -132,6 +149,29 @@ function displayData(forecast){
 	 $('.twohourlatertime').html(hourConverter(forecast.hourly.data[2].time));
 	 $('.threehourlatertime').html(hourConverter(forecast.hourly.data[3].time));
 
+	$('.day01high').html(Math.round(forecast.daily.data[1].temperatureHigh));
+	$('.day01low').html(Math.round(forecast.daily.data[1].temperatureLow));
+	$('.day01icon').html('<img src="' + displayIcon2(forecast.daily.data[1].icon) + '">');
+
+	$('.day02high').html(Math.round(forecast.daily.data[2].temperatureHigh));
+	$('.day02low').html(Math.round(forecast.daily.data[2].temperatureLow));
+	$('.day02icon').html('<img src="' + displayIcon2(forecast.daily.data[2].icon) + '">');
+
+	$('.day03high').html(Math.round(forecast.daily.data[3].temperatureHigh));
+	$('.day03low').html(Math.round(forecast.daily.data[3].temperatureLow));
+	$('.day03icon').html('<img src="' + displayIcon2(forecast.daily.data[3].icon) + '">');
+
+	$('.day04high').html(Math.round(forecast.daily.data[4].temperatureHigh));
+	$('.day04low').html(Math.round(forecast.daily.data[4].temperatureLow));
+	$('.day04icon').html('<img src="' + displayIcon2(forecast.daily.data[4].icon) + '">');
+
+	$('.day05high').html(Math.round(forecast.daily.data[5].temperatureHigh));
+	$('.day05low').html(Math.round(forecast.daily.data[5].temperatureLow));
+	$('.day05icon').html('<img src="' + displayIcon2(forecast.daily.data[5].icon) + '">');
+
+	$('.day06high').html(Math.round(forecast.daily.data[6].temperatureHigh));
+	$('.day06low').html(Math.round(forecast.daily.data[6].temperatureLow));
+	$('.day06icon').html('<img src="' + displayIcon2(forecast.daily.data[6].icon) + '">');
 	// In this example, the high temperature for the first day of the week
 	// (referenced by the number 0) is written as HTML inside the <div class="today"> element
 	// If I want to round this number up, I would modify the code like this
@@ -145,13 +185,18 @@ function displayData(forecast){
 	// If I want to display a summary of the weather
 	// (like, "scattered thundershowers...") for today
 
-	// $('.today').html(forecast.daily.data[0].summary);
+	$('.summary').html(forecast.daily.data[0].summary);
 
 	// If I want to modify the display of the page element based on the weather
-	// I can access the "icon" property. This returns a value that can be used
+	// IS can access the "icon" property. This returns a value that can be used
 	// as a CSS class name that you can create with your style details
 
-	 
+	 $('.day01').html(displayDay(1));
+	 $('.day02').html(displayDay(2));
+	 $('.day03').html(displayDay(3));
+	 $('.day04').html(displayDay(4));
+	 $('.day05').html(displayDay(5));
+	 $('.day06').html(displayDay(6));
 
 	
 	// Note – the value of "icon" above needs to be checked in the inspect
@@ -188,13 +233,13 @@ function displayDay(n){
 	var d = new Date();
 	var weekday = new Array();
 
-	weekday[0] = "S";
-	weekday[1] = "M";
-	weekday[2] = "T";
-	weekday[3] = "W";
-	weekday[4] = "T";
-	weekday[5] = "F";
-	weekday[6] = "S";
+	weekday[0] = "SUN";
+	weekday[1] = "MON";
+	weekday[2] = "TUES";
+	weekday[3] = "WED";
+	weekday[4] = "THUR";
+	weekday[5] = "FRI";
+	weekday[6] = "SAT";
 
 	var dispDay = d.getDay() + n;
 
@@ -290,4 +335,51 @@ function displayIcon(n){
     		// code block
 	}
 }
+
+function displayIcon2(n){
+	switch(n) {
+		case "clear-day":
+    		return "img/icons/Sun.svg";
+    		break;
+    	case "clear-night":
+    		return "img/icons/Moon-Full.svg";
+    		break;
+    	case "rain":
+    		return "img/icons/Cloud-Rain.svg";
+    		break;
+    	case "snow":
+    		return "img/icons/Snowflake.svg";
+    		break;
+    	case "sleet":
+    		return "img/icons/Cloud-Hail.svg";
+    		break;
+    	case "wind":
+    		return "img/icons/Wind.svg";
+    		break;
+    	case "fog":
+    		return "img/icons/Cloud-Fog.svg";
+    		break;
+    	case "cloudy":
+    		return "img/icons/Cloud.svg";
+    		break;
+    	case "partly-cloudy-day":
+    		return "img/icons/Cloud-Sun.svg";
+    		break;
+    	case "partly-cloudy-night":
+    		return "img/icons/Cloud-Moon.svg";
+    		break;
+    	case "hail":
+    		return "img/icons/Cloud-Hail.svg";
+    		break;
+    	case "thunderstorm":
+    		return "img/icons/Cloud-Lightening.svg";
+    		break;
+    	case "tornado":
+    		return "img/icons/Tornado.svg";
+    		break;
+  		default:
+    		// code block
+	}
+}
+
 

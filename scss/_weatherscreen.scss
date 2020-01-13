@@ -5,33 +5,29 @@ body{
 	width: 100vw;
 
 }
+
 .location{
 	display: grid;
 	grid-template-rows: .5fr 2fr;
-	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 		h1{
-			grid-column: 2 / span 3;
-			justify-self: end;
+			grid-column: 1;
 			grid-row: 1;
-			font-size: 3rem;
 			margin: 0;
-			padding: 1rem 2rem 1rem 2rem;
+			padding: 1rem 1rem 1rem 1rem;
 			font-family: 'Dosis', sans-serif;
 			font-weight: 300;
 					}
 		.weathericon{
-			grid-column: 1 / span 2;
+			grid-column: 1;
 			grid-row: 2;
-			margin-right: 3rem;
-			margin-top: -1.2rem;
 		}
 
 		.weathericon img{
-			width: 120%;
+			width: 160%;
 		}
 		.today{
-			grid-column: 2;
-			justify-self: end;
+			grid-column: 3;
 			align-self: center;
 			grid-row: 2;
 			font-size: 4.5rem;
@@ -42,7 +38,7 @@ body{
 			grid-column: 3;
 			grid-row: 2;
 			font-size: 20px;
-			padding-left: 3px;
+			padding-left: 3rem;
 			align-self: center;
 			padding-bottom: 5px;
 			color:  #b3b6b7  ;
@@ -51,9 +47,9 @@ body{
 			grid-column: 3;
 			grid-row: 2;
 			font-size: 20px;
-			padding-left: 3px;
+			padding-left: 3rem;
 			align-self: center;
-			padding-top: 2.2rem;
+			padding-top: 2.4rem;
 			color: #b3b6b7;
 
 		}
@@ -64,6 +60,8 @@ body{
 		    padding-bottom: 3.5rem;
 		    font-size: 1.6rem;
 		    color:  #5f6a6a ;
+		    padding-left: 3rem;
+
 		}
 		h2{
 			grid-column: 2;
@@ -75,8 +73,12 @@ body{
 			font-size: 12px;
 			padding-bottom: 2rem;
 		}
-		.feelslike{
-
+		.summary{
+			grid-row: 2;
+			grid-column: 3;
+			align-self: end;
+			padding-bottom: 2rem;
+			padding-right: 14px;
 		}
 
 }
@@ -85,7 +87,7 @@ body{
 	display: grid;
 	grid-template-columns: .5fr 5fr .5fr;
 	grid-template-rows: 1;
-	font-family: 'Kameron', serif;
+	/*font-family: 'Kameron', serif;*/
 
 	  }
 
@@ -124,8 +126,7 @@ body{
 			text-decoration: none;
 			color: white;
 			font-weight: 700;
-			color: #b3b6b7;
-			margin-bottom: 1rem;		
+			color: #b3b6b7;		
 		}
 
 	.hourly img{
@@ -133,23 +134,7 @@ body{
 			margin: 0;
 		}
 
-.sevenday {
 
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(4, 1fr);
-	background-image: url(../img/underground.png);
-	background-size: cover;
-	height: 100vh;
-
-	.sevendaybutton{
-		grid-column: 2;
-		grid-row: 1;
-		align-self: start;
-		
-	}
-
-}
 /*.underground{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

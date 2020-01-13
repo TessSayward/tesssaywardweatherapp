@@ -12,7 +12,7 @@ header {
   /* grid layout */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
   align-items: center;
   justify-items: center;
   /* visual design */
@@ -25,11 +25,13 @@ header {
   p {
     color: #B2DFDB;
   }
+  img{
+  	grid-row: 1;
+  	align-self: end;
+  	padding-bottom: 1rem;
+  }
 }
 
-main {
-  padding: 3rem;
-}
 
 .slide{
 	transform: translateY(-100%);
@@ -63,4 +65,5 @@ header .button{
 	color: white;
 	font-weight: 700;
 	font-size: 1.2rem;
+	grid-row: 2;
 }

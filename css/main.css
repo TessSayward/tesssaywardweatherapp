@@ -8,7 +8,7 @@ header {
   /* grid layout */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
   align-items: center;
   justify-items: center;
   /* visual design */
@@ -19,9 +19,10 @@ header {
     color: #fff; }
   header p {
     color: #B2DFDB; }
-
-main {
-  padding: 3rem; }
+  header img {
+    grid-row: 1;
+    align-self: end;
+    padding-bottom: 1rem; }
 
 .slide {
   transform: translateY(-100%); }
@@ -51,7 +52,8 @@ header .button {
   text-decoration: none;
   color: white;
   font-weight: 700;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  grid-row: 2; }
 
 body {
   background-color: #E1F9FF;
@@ -62,26 +64,21 @@ body {
 .location {
   display: grid;
   grid-template-rows: .5fr 2fr;
-  grid-template-columns: 1fr 4fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr; }
   .location h1 {
-    grid-column: 2 / span 3;
-    justify-self: end;
+    grid-column: 1;
     grid-row: 1;
-    font-size: 3rem;
     margin: 0;
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 1rem 1rem 1rem 1rem;
     font-family: 'Dosis', sans-serif;
     font-weight: 300; }
   .location .weathericon {
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    margin-right: 3rem;
-    margin-top: -1.2rem; }
+    grid-column: 1;
+    grid-row: 2; }
   .location .weathericon img {
-    width: 120%; }
+    width: 160%; }
   .location .today {
-    grid-column: 2;
-    justify-self: end;
+    grid-column: 3;
     align-self: center;
     grid-row: 2;
     font-size: 4.5rem;
@@ -91,7 +88,7 @@ body {
     grid-column: 3;
     grid-row: 2;
     font-size: 20px;
-    padding-left: 3px;
+    padding-left: 3rem;
     align-self: center;
     padding-bottom: 5px;
     color: #b3b6b7; }
@@ -99,9 +96,9 @@ body {
     grid-column: 3;
     grid-row: 2;
     font-size: 20px;
-    padding-left: 3px;
+    padding-left: 3rem;
     align-self: center;
-    padding-top: 2.2rem;
+    padding-top: 2.4rem;
     color: #b3b6b7; }
   .location .unit {
     grid-column: 3;
@@ -109,7 +106,8 @@ body {
     align-self: center;
     padding-bottom: 3.5rem;
     font-size: 1.6rem;
-    color: #5f6a6a; }
+    color: #5f6a6a;
+    padding-left: 3rem; }
   .location h2 {
     grid-column: 2;
     grid-row: 2;
@@ -119,12 +117,18 @@ body {
     justify-self: end;
     font-size: 12px;
     padding-bottom: 2rem; }
+  .location .summary {
+    grid-row: 2;
+    grid-column: 3;
+    align-self: end;
+    padding-bottom: 2rem;
+    padding-right: 14px; }
 
 .tips {
   display: grid;
   grid-template-columns: .5fr 5fr .5fr;
   grid-template-rows: 1;
-  font-family: 'Kameron', serif; }
+  /*font-family: 'Kameron', serif;*/ }
 
 .display {
   grid-column: 2;
@@ -154,12 +158,40 @@ body {
   text-decoration: none;
   color: white;
   font-weight: 700;
-  color: #b3b6b7;
-  margin-bottom: 1rem; }
+  color: #b3b6b7; }
 
 .hourly img {
   width: 95%;
   margin: 0; }
+
+/*.underground{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	grid-column: 1 / span 3;
+	grid-row: 1 / span 3;
+	z-index: -1;
+	}*/
+.weatherpanel {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2rem 2rem 3rem;
+  align-items: center;
+  justify-items: center;
+  height: 30vh;
+  color: white; }
+  .weatherpanel h3 {
+    grid-row: 1; }
+  .weatherpanel img {
+    grid-row: 2;
+    margin: -1rem;
+    color: white; }
+  .weatherpanel p {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0; }
 
 .sevenday {
   display: grid;
@@ -171,16 +203,29 @@ body {
   .sevenday .sevendaybutton {
     grid-column: 2;
     grid-row: 1;
-    align-self: start; }
-
-/*.underground{
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-columns: repeat(3, 1fr);
-	width: 100%;
-	grid-column: 1 / span 3;
-	grid-row: 1 / span 3;
-	z-index: -1;
-	}*/
+    justify-self: center;
+    font-size: 1.3rem; }
+  .sevenday .day1p {
+    grid-row: 2;
+    grid-column: 1; }
+  .sevenday .day2p {
+    grid-column: 2;
+    grid-row: 2;
+    align-content: center; }
+  .sevenday .day3p {
+    grid-column: 3;
+    grid-row: 2;
+    align-content: end; }
+  .sevenday .day4p {
+    grid-column: 1;
+    grid-row: 3; }
+  .sevenday .day5p {
+    grid-column: 2;
+    grid-row: 3;
+    align-content: center; }
+  .sevenday .day6p {
+    grid-column: 3;
+    grid-row: 3;
+    align-content: end; }
 
 /*# sourceMappingURL=main.css.map */
