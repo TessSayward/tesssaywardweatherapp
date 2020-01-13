@@ -71,7 +71,7 @@ body {
     margin: 0;
     padding: 1rem 1rem 1rem 1rem;
     font-family: 'Dosis', sans-serif;
-    font-weight: 300; }
+    font-weight: 700; }
   .location .weathericon {
     grid-column: 1;
     grid-row: 2; }
